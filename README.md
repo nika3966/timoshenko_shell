@@ -1,2 +1,2 @@
 # timoshenko_shell
-contains julia code for solving Timoshenko axisymmetric shell model
+Contains julia code for solving Timoshenko axisymmetric shell model.
