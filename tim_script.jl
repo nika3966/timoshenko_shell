@@ -1,5 +1,6 @@
+# Copyright (C) 2024 nikoloz katchakhidze
+# Created: 2024-03-21
 include("iterations.jl")
-#include("iterations1.jl")
 include("output_results_py.jl")
 
 # initial parameters
