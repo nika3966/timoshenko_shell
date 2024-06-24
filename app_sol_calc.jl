@@ -21,7 +21,7 @@ function app_sol_calc(xx, wn_m, n, reltol, epsil, sg)
     temp1, _ = quadgk(uu, 0, xx[id], rtol=reltol, atol=epsil)
     temp2, _ = quadgk(uu, xx[id], 1, rtol=reltol, atol=epsil)      
     u_app[id] = 0.5*(xx[id] - 1)*temp1 + 0.5*xx[id]*temp2
-	  temp3, _ = quadgk(psi_app3, 0, xx[id], rtol=reltol, atol=epsil)
+    temp3, _ = quadgk(psi_app3, 0, xx[id], rtol=reltol, atol=epsil)
     temp4, _ = quadgk(psi_app4, xx[id], 1, rtol=reltol, atol=epsil)      
     psi_app[id] = psi_app1(xx[id])*temp3 + psi_app2(xx[id])*temp4
   end
