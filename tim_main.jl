@@ -1,3 +1,5 @@
+# Copyright (C) 2024 nikoloz katchakhidze
+# Created: 2024-03-21
 include("iterations.jl")
 include("app_sol_calc.jl")
 include("p_err.jl")
