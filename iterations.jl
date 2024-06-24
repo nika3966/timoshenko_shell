@@ -15,11 +15,11 @@ function iterations(max_iter, k02, nu, n, E, h, reltol, epsil,al)
   for iter = 1:max_iter
     wn_m0 = copy(wn_m)	
     for id = 1:n
-		  nn1 = deleteat!(copy(nn), id)
-		  wn_m1 = deleteat!(copy(wn_m0), id)
-		  ki1 = deleteat!(copy(ki), id)
-		  dt[id] = pi^2*dot(nn1.^2,wn_m1.^2) - 4.0*dot(ki1,wn_m1)
-	  end    
+      nn1 = deleteat!(copy(nn), id)
+      wn_m1 = deleteat!(copy(wn_m0), id)
+      ki1 = deleteat!(copy(ki), id)
+      dt[id] = pi^2*dot(nn1.^2,wn_m1.^2) - 4.0*dot(ki1,wn_m1)
+    end    
     r = dt + (2*(1 - nu))*bt0 - 4*(ki./(pi*nn)).^2
     aa = sqrt.((s/2).^2 + (r/3).^3)
     sigma1 = cbrt.(aa - s/2)
