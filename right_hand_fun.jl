@@ -1,3 +1,5 @@
+# Copyright (C) 2024 nikoloz katchakhidze
+# Created: 2024-03-21
 using QuadGK
 
 function right_hand_fun(k02, E, h, sg, nu, n, reltol, abstol, al)
