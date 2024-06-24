@@ -1,3 +1,5 @@
+# Copyright (C) 2024 nikoloz katchakhidze
+# Created: 2024-03-21
 include("right_hand_fun.jl")
 using LinearAlgebra
 
