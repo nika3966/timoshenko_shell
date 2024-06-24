@@ -1,3 +1,5 @@
+# Copyright (C) 2024 nikoloz katchakhidze
+# Created: 2024-03-21
 using PyPlot
 
 function log_plot(fs, x, y, h, x_min, x_max, y_min, y_max, ylab)
