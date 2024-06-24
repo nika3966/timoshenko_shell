@@ -27,7 +27,7 @@ using Base.Threads
     err_w_n = zeros(n_layers)
     err_u_n = zeros(n_layers)
     err_psi_n = zeros(n_layers)
-	xx = collect(0:0.01:1)
+    xx = collect(0:0.01:1)
 
     Threads.@threads for idx = 5:5:N
         
@@ -36,7 +36,7 @@ using Base.Threads
         (wn_m, iterations_count) = iterations(max_iter, k02, nu, idx, E, h, reltol, abstol,al)
         # error calculation
         (w_app, u_app, psi_app) = app_sol_calc(xx, wn_m, idx, reltol, abstol, sg)
-		(pnw, pnu, pnpsi)  = pexact_sol(xx, idx, reltol, abstol, sg,al)
+	(pnw, pnu, pnpsi)  = pexact_sol(xx, idx, reltol, abstol, sg,al)
         (err_w, err_u, err_psi) = p_err(xx, pnw, pnu, pnpsi, w_app, u_app, psi_app)
         err_w_n[idx_n] = err_w
         err_u_n[idx_n] = err_u
@@ -44,23 +44,23 @@ using Base.Threads
         
     end
     nn = 5:5:N
-	fs = (6.5, 5)    
-	y_min = 1e-5
-	y_max = 1e-1 
+    fs = (6.5, 5)    
+    y_min = 1e-5
+    y_max = 1e-1 
     x_min = 0.4e+1
     x_max = 0.56e+2
-	ylab = L"e_{n,m}^{(1)}"
-	log_plot(fs, nn, err_u_n, h, x_min, x_max, y_min, y_max, ylab)
+    ylab = L"e_{n,m}^{(1)}"
+    log_plot(fs, nn, err_u_n, h, x_min, x_max, y_min, y_max, ylab)
     #figure	
-	y_min = 1e-6
-	y_max = 1e-2 
+    y_min = 1e-6
+    y_max = 1e-2 
     ylab = L"e_{n,m}^{(2)}"	   
-	log_plot(fs, nn, err_w_n, h, x_min, x_max, y_min, y_max, ylab)    
+    log_plot(fs, nn, err_w_n, h, x_min, x_max, y_min, y_max, ylab)    
     #figure
-	y_min = 1e-5
-	y_max = 1e-1 
+    y_min = 1e-5
+    y_max = 1e-1 
     ylab = L"e_{n,m}^{(3)}"       
-	log_plot(fs, nn, err_psi_n, h, x_min, x_max, y_min, y_max, ylab)
+    log_plot(fs, nn, err_psi_n, h, x_min, x_max, y_min, y_max, ylab)
     # df = DataFrame(Galerkin_coeffs = nn, Algorithm_error = err_u_n)
     # CSV.write("res/err_u.csv", df)
 	# df1 = DataFrame(Galerkin_coeffs = nn, Algorithm_error = err_w_n)
