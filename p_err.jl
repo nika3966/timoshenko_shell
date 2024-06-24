@@ -1,3 +1,5 @@
+# Copyright (C) 2024 nikoloz katchakhidze
+# Created: 2024-03-21
 using LinearAlgebra
 
 function p_err(xx, pnw, pnu, pnpsi, w_app, u_app, psi_app)
