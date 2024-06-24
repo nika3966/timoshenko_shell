@@ -1,3 +1,5 @@
+# Copyright (C) 2024 nikoloz katchakhidze
+# Created: 2024-03-21
 using PyPlot
 
 function plot_res(fs, xx, fex, fapp, lg1, lg2, ylab)
